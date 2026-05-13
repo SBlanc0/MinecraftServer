@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Trinidad de los Antiguos Vigilantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="lore-root" role="main">
+  <div class="pantheon-header">
+    <div class="goddess-name">Bajo la gracia de la Diosa</div>
+    <h1 class="pantheon-title">La Trinidad de los Antiguos Vigilantes</h1>
+    <div class="divider"></div>
+    <p class="pantheon-sub">Tres ejecutores de una voluntad suprema que reflejan lo que la Diosa ya decidió.</p>
+  </div>
+
+  <div class="deity-card khor">
+    <div class="deity-header">
+      <div class="deity-sigil" aria-hidden="true">⚒</div>
+      <div class="deity-meta">
+        <div class="deity-name">Khor-Vhalis</div>
+        <div class="deity-title">Señor del Hierro y la Sangre</div>
+        <div class="deity-domain">Combate · Forja · Resistencia · Patrón de los Guild Masters</div>
+      </div>
+    </div>
+    <div class="tabs" id="khor-tabs">
+      <button class="tab-btn active-khor" onclick="switchTab('khor','lore')">Naturaleza</button>
+      <button class="tab-btn" onclick="switchTab('khor','mortals')">Relación con los mortales</button>
+      <button class="tab-btn" onclick="switchTab('khor','scriptures')">Escrituras</button>
+    </div>
+    <div id="khor-lore" class="tab-content active">
+      <p class="lore-text">Khor-Vhalis fue refinado a partir de la primera sangre derramada en el mundo.</p>
+    </div>
+    <div id="khor-mortals" class="tab-content">
+      <p class="lore-text">Ve a los mortales como hierro en bruto y solo bendice la negativa a rendirse.</p>
+    </div>
+    <div id="khor-scriptures" class="tab-content">
+      <div class="scripture-block">
+        <div class="scripture-label">Libro del Yunque</div>
+        <div class="scripture-text">"El arma que nunca fue usada no es un arma. Es

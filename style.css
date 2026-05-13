@@ -1,0 +1,51 @@
+:root {
+  --font-serif: 'Georgia', serif;
+  --font-sans: 'Arial', sans-serif;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #888;
+  --color-border-primary: #ccc;
+  --color-border-secondary: #ddd;
+  --color-border-tertiary: #eee;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f9f9f9;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
+}
+
+.lore-root { font-family: var(--font-serif); color: var(--color-text-primary); padding: 2rem 0; max-width: 680px; margin: 0 auto; }
+.pantheon-header { text-align: center; margin-bottom: 2.5rem; }
+.goddess-name { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.pantheon-title { font-size: 26px; font-weight: 500; margin: 0 0 0.75rem; }
+.divider { width: 48px; height: 1px; background: var(--color-border-primary); margin: 0.75rem auto; }
+.pantheon-sub { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 480px; margin: 0 auto; font-family: var(--font-sans); }
+
+.deity-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.5rem; margin-bottom: 1.25rem; background: var(--color-background-primary); }
+.deity-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.deity-sigil { width: 48px; height: 48px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+
+/* Estilos específicos de cada Vigilante */
+.khor .deity-sigil { background: #FAECE7; color: #993C1D; }
+.aethel .deity-sigil { background: #EEEDFE; color: #534AB7; }
+.xal .deity-sigil { background: #F1EFE8; color: #444441; }
+
+.deity-name { font-size: 17px; font-weight: 500; margin: 0 0 3px; font-family: var(--font-serif); }
+.khor .deity-name { color: #993C1D; }
+.aethel .deity-name { color: #534AB7; }
+.xal .deity-name { color: #444441; }
+
+.tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+.tab-btn { font-size: 12px; font-family: var(--font-sans); padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); background: transparent; cursor: pointer; color: var(--color-text-secondary); }
+
+/* Pestañas Activas */
+.tab-btn.active-khor { background: #FAECE7; color: #993C1D; border-color: #F0997B; }
+.tab-btn.active-aethel { background: #EEEDFE; color: #534AB7; border-color: #AFA9EC; }
+.tab-btn.active-xal { background: #F1EFE8; color: #5F5E5A; border-color: #B4B2A9; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.lore-text { font-size: 14px; line-height: 1.8; color: var(--color-text-secondary); font-family: var(--font-sans); }
+.scripture-block { border-left: 2px solid var(--color-border-secondary); padding: 0.75rem 1rem; margin: 0.75rem 0; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+.scripture-label { font-size: 11px; font-weight: 500; text-transform: uppercase; margin-bottom: 6px; font-family: var(--font-sans); }
+.scripture-text { font-size: 13px; font-style: italic; font-family: var(--font-serif); }
