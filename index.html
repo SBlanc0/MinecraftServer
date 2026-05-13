@@ -1,42 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Trinidad de los Antiguos Vigilantes</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Trinidad de los Antiguos Vigilantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="lore-root" role="main">
-  <div class="pantheon-header">
-    <div class="goddess-name">Bajo la gracia de la Diosa</div>
-    <h1 class="pantheon-title">La Trinidad de los Antiguos Vigilantes</h1>
-    <div class="divider"></div>
-    <p class="pantheon-sub">Tres ejecutores de una voluntad suprema que reflejan lo que la Diosa ya decidió.</p>
-  </div>
+<div class="container">
 
-  <div class="deity-card khor">
-    <div class="deity-header">
-      <div class="deity-sigil" aria-hidden="true">⚒</div>
-      <div class="deity-meta">
+  <header class="site-header">
+    <div class="goddess-label">Bajo la gracia de la Diosa</div>
+    <h1 class="site-title">La Trinidad de los<br>Antiguos Vigilantes</h1>
+    <span class="ornament">— ✦ —</span>
+    <p class="site-subtitle">Tres ejecutores de una voluntad suprema. Ninguno actúa por cuenta propia — todo lo que hacen refleja lo que la Diosa ya decidió antes de que el mundo abriera sus ojos.</p>
+  </header>
+
+  <div class="section-title">Los Tres Vigilantes</div>
+
+  <nav class="deity-nav">
+    <button class="deity-nav-btn khor active" onclick="showDeity('khor', this)">Khor-Vhalis</button>
+    <button class="deity-nav-btn aethel" onclick="showDeity('aethel', this)">Aethel-Syren</button>
+    <button class="deity-nav-btn xal" onclick="showDeity('xal', this)">Xal-Zulthor</button>
+  </nav>
+
+  <!-- Khor -->
+  <div class="deity-card khor visible" id="card-khor">
+    <div class="deity-card-header">
+      <div class="deity-sigil">⚒</div>
+      <div>
         <div class="deity-name">Khor-Vhalis</div>
-        <div class="deity-title">Señor del Hierro y la Sangre</div>
-        <div class="deity-domain">Combate · Forja · Resistencia · Patrón de los Guild Masters</div>
+        <div class="deity-epithet">Señor del Hierro y la Sangre</div>
+        <div class="deity-domains">Combate · Forja · Resistencia · Patrón de los Guild Masters</div>
       </div>
     </div>
-    <div class="tabs" id="khor-tabs">
-      <button class="tab-btn active-khor" onclick="switchTab('khor','lore')">Naturaleza</button>
-      <button class="tab-btn" onclick="switchTab('khor','mortals')">Relación con los mortales</button>
-      <button class="tab-btn" onclick="switchTab('khor','scriptures')">Escrituras</button>
+    <div class="deity-tabs">
+      <button class="tab-btn active" onclick="switchTab('khor','naturaleza',this)">Naturaleza</button>
+      <button class="tab-btn" onclick="switchTab('khor','mortales',this)">Los Mortales</button>
+      <button class="tab-btn" onclick="switchTab('khor','escrituras',this)">Escrituras</button>
     </div>
-    <div id="khor-lore" class="tab-content active">
-      <p class="lore-text">Khor-Vhalis fue refinado a partir de la primera sangre derramada en el mundo.</p>
+    <div class="deity-body">
+      <div class="tab-panel active" id="khor-naturaleza">
+        <p class="lore-text">Khor-Vhalis no fue creado — fue <em>refinado</em>. La Diosa tomó la primera sangre derramada en el mundo, la sangre de los que murieron defendiendo lo que no tenía nombre aún, y la forjó en voluntad. No hay en él nada que no haya sido temple. Su voz no se eleva porque no lo necesita: cuando Khor habla, el silencio que le antecede ya convenció a todos de escuchar.</p>
+        <p class="lore-text">De los tres Vigilantes es el único que camina entre los mortales sin disfraz. Se ha aparecido como herrero anciano, como guerrero sin rostro al fondo de una taberna, como la calma que siente un combatiente en el instante antes de que todo se decida. No busca adoración — le incomoda. Lo que busca es reconocer la fuerza genuina cuando la ve, y cuando la ve, inclina la cabeza un grado imperceptible. Es su único gesto de respeto.</p>
+      </div>
+      <div class="tab-panel" id="khor-mortales">
+        <p class="lore-text">Khor ve a los mortales como hierro en bruto: valiosos en potencia, inútiles sin trabajo. No siente afecto por ellos, pero tampoco desdén. Lo que siente es algo más parecido a la expectativa seria con que un maestro observa a un aprendiz que podría, si se esfuerza, ser mejor que él.</p>
+        <p class="lore-text">Quien le reza por miedo o por conveniencia recibirá su espalda. Quien le reza porque sangró por algo real, porque cayó y se levantó sin excusas, puede recibir una respuesta — breve, sin ornamento, pero que cambia algo en los huesos de quien la escucha. Khor no bendice el talento. Bendice la negativa a rendirse.</p>
+      </div>
+      <div class="tab-panel" id="khor-escrituras">
+        <div class="scripture">
+          <div class="scripture-label">Libro del Yunque — Versículo I</div>
+          <div class="scripture-text">"El arma que nunca fue usada no es un arma. Es miedo con forma de metal."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Libro del Yunque — Versículo VII</div>
+          <div class="scripture-text">"No te pregunté cuántas veces ganaste. Te pregunté cuántas veces te levantaste después de perder. Ahí vive lo que me importa de ti."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Libro del Yunque — Versículo XII</div>
+          <div class="scripture-text">"La Diosa me enseñó que la sangre tiene memoria. Que cada cicatriz es una decisión tallada en la carne. Llevarlas sin vergüenza es el único rezo que acepto."</div>
+        </div>
+      </div>
     </div>
-    <div id="khor-mortals" class="tab-content">
-      <p class="lore-text">Ve a los mortales como hierro en bruto y solo bendice la negativa a rendirse.</p>
+  </div>
+
+  <!-- Aethel -->
+  <div class="deity-card aethel" id="card-aethel">
+    <div class="deity-card-header">
+      <div class="deity-sigil">✦</div>
+      <div>
+        <div class="deity-name">Aethel-Syren</div>
+        <div class="deity-epithet">La Tejedora del Éter y el Destino</div>
+        <div class="deity-domains">Magia · Sabiduría · Tiempo · Intérprete de la Voluntad Divina</div>
+      </div>
     </div>
-    <div id="khor-scriptures" class="tab-content">
-      <div class="scripture-block">
-        <div class="scripture-label">Libro del Yunque</div>
-        <div class="scripture-text">"El arma que nunca fue usada no es un arma. Es
+    <div class="deity-tabs">
+      <button class="tab-btn active" onclick="switchTab('aethel','naturaleza',this)">Naturaleza</button>
+      <button class="tab-btn" onclick="switchTab('aethel','mortales',this)">Los Mortales</button>
+      <button class="tab-btn" onclick="switchTab('aethel','escrituras',this)">Escrituras</button>
+    </div>
+    <div class="deity-body">
+      <div class="tab-panel active" id="aethel-naturaleza">
+        <p class="lore-text">Aethel-Syren existe en todos los tiempos simultáneamente pero habita ninguno del todo. Cuando los otros Vigilantes se preguntan qué quiere la Diosa, la miran a ella — no porque ella lo sepa mejor, sino porque aprendió a leer los hilos que la Diosa deja caer sin intención. Comprende que la voluntad divina a veces no es una orden sino una pregunta abierta, y que responderla bien requiere más sabiduría que obediencia.</p>
+        <p class="lore-text">Fue Aethel quien tejió las Estatuas de la Diosa en el mundo — no por mandato explícito, sino porque comprendió antes que nadie que los mortales necesitarían puntos de contacto con lo sagrado. La Diosa, cuando las vio por primera vez completas, guardó silencio un instante largo. Los que estaban presentes dicen que ese silencio era la forma más alta de gratitud.</p>
+      </div>
+      <div class="tab-panel" id="aethel-mortales">
+        <p class="lore-text">Aethel ve a los mortales como lectores que aún no saben que sostienen un libro. Cada vida es un texto en un idioma que el propio mortal ignora — ella lo descifra con facilidad, pero rara vez lo traduce completo. Prefiere dar una sola palabra justa en el momento exacto a dar un párrafo antes de tiempo.</p>
+        <p class="lore-text">Le fascinan los mortales que buscan entender más que los que buscan poder. Un mago que estudia pergaminos por curiosidad genuina le resulta infinitamente más interesante que un rey. Cuando aparece ante ellos lo hace como una anciana que recita versos sin sentido aparente, o como una voz en el instante entre sueño y vigilia. Sus respuestas siempre son ciertas. Nunca son directas.</p>
+      </div>
+      <div class="tab-panel" id="aethel-escrituras">
+        <div class="scripture">
+          <div class="scripture-label">Crónicas del Hilo — Fragmento I</div>
+          <div class="scripture-text">"El maná no es tuyo. Eres tú quien es del maná. La diferencia entre ambas frases es la distancia entre el mago que florece y el que se consume."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Crónicas del Hilo — Fragmento IV</div>
+          <div class="scripture-text">"La Diosa no habla en palabras. Habla en la forma en que la luz cae sobre lo que aún no has decidido. Aprender a leer esa luz es el único estudio que importa."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Crónicas del Hilo — Fragmento IX</div>
+          <div class="scripture-text">"Me preguntaste cuál es tu destino. Te respondo con otra pregunta: ¿cuántos pergaminos has leído esta semana? El destino no se predice — se merece."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Xal -->
+  <div class="deity-card xal" id="card-xal">
+    <div class="deity-card-header">
+      <div class="deity-sigil">◈</div>
+      <div>
+        <div class="deity-name">Xal-Zulthor</div>
+        <div class="deity-epithet">Custodio de las Sombras y el Vacío</div>
+        <div class="deity-domains">Muerte · Dimensiones · Lo Desconocido · Carcelero del End</div>
+      </div>
+    </div>
+    <div class="deity-tabs">
+      <button class="tab-btn active" onclick="switchTab('xal','naturaleza',this)">Naturaleza</button>
+      <button class="tab-btn" onclick="switchTab('xal','mortales',this)">Los Mortales</button>
+      <button class="tab-btn" onclick="switchTab('xal','escrituras',this)">Escrituras</button>
+    </div>
+    <div class="deity-body">
+      <div class="tab-panel active" id="xal-naturaleza">
+        <p class="lore-text">Xal-Zulthor no nació del mismo acto que los otros dos. La Diosa lo formó del espacio entre los mundos — no de luz ni de sangre, sino de la <em>ausencia</em> que existe cuando todo lo demás se retira. Era perfecto para la tarea que ya le esperaba antes de que supiera su propio nombre: contener lo que no debe existir.</p>
+        <p class="lore-text">Lo que ocurrió en el End lo transformó. Encarceló a los dioses corruptos con éxito — pero el proceso exigió que los mirara directamente, que comprendiera su corrupción para poder moldear las cadenas correctas. Algo de lo que vio quedó en él, no como contaminación sino como conocimiento que ningún ser debería tener. Ahora sabe cosas que preferiría no saber. Guarda silencio no por misterio sino porque no hay palabras para lo que carga.</p>
+      </div>
+      <div class="tab-panel" id="xal-mortales">
+        <p class="lore-text">Xal no ve a los mortales como hierro ni como textos. Los ve como velas: breves, necesarias, destinadas a consumirse. No lo dice con crueldad — lo dice con la precisión fría de quien ha contado más muertes que estrellas en el cielo del End. No siente desprecio por ellos. Siente algo más extraño: una suerte de ternura distante, la que se siente por algo frágil que no puede protegerse a sí mismo.</p>
+        <p class="lore-text">Los mortales que entran en mazmorras oscuras entran sin saberlo en su territorio. Él los observa. A veces, muy raramente, interviene — no para salvarlos sino para asegurarse de que lo que matan muera de verdad. Que no vuelva. Es el único favor que sabe hacer.</p>
+      </div>
+      <div class="tab-panel" id="xal-escrituras">
+        <div class="scripture">
+          <div class="scripture-label">Tablas del Umbral — Inscripción I</div>
+          <div class="scripture-text">"Entraste a la oscuridad buscando riqueza. Bien. La oscuridad también te buscaba a ti. Que sea una conversación justa."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Tablas del Umbral — Inscripción III</div>
+          <div class="scripture-text">"No temo la muerte. Soy quien la custodia cuando no está de guardia. Lo que temo es aquello que sobrevive a la muerte sin haber merecido seguir existiendo."</div>
+        </div>
+        <div class="scripture">
+          <div class="scripture-label">Tablas del Umbral — Inscripción VII</div>
+          <div class="scripture-text">"Los encadené porque la Diosa lo dispuso. Pero fui yo quien tuvo que mirarlos a los ojos para saber cómo hacerlo. Ese precio lo pago solo. No pido comprensión. Pido distancia."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:4rem;">Canon y Escritura Sagrada</div>
+
+  <div class="lore-section">
+    <div class="lore-section-title">El Mito de Creación</div>
+    <div class="lore-section-sub">Los Tres Nombramientos</div>
+    <p class="lore-prose">Al principio del mundo, la Diosa existía sola en la plenitud de lo que aún no tenía forma. Creó la tierra, el maná, la muerte y el tiempo — pero los creó demasiado grandes para sostenerlos sin intermediarios. El mundo era demasiado vasto, demasiado caótico, demasiado hambriento de orden para que una sola voluntad, por suprema que fuera, lo gobernara desde arriba sin tocar el suelo. Entonces nombró a tres.</p>
+    <p class="lore-prose">El primer nombramiento fue de sangre. La Diosa tomó la violencia que existía en la naturaleza — no la maldad, sino la fuerza bruta y honesta del depredador — y la condensó hasta que adquirió voluntad. A esa voluntad la llamó <em>Khor-Vhalis</em> y le dijo una sola cosa: <em>"Que ningún mortal digno caiga sin haber sido puesto a prueba primero."</em> Khor inclinó la cabeza y no respondió. La Diosa entendió que eso era suficiente.</p>
+    <p class="lore-prose">El segundo nombramiento fue de luz. La Diosa miró los hilos del tiempo y eligió a la que ya los observaba desde antes de existir del todo. A esa presencia la llamó <em>Aethel-Syren</em> y le dijo: <em>"Interpreta lo que yo no tenga tiempo de explicar."</em> Aethel respondió con una pregunta: <em>"¿Y si me equivoco en la interpretación?"</em> La Diosa sonrió — la única sonrisa documentada en las escrituras — y dijo: <em>"Eso también lo tejí en ti."</em></p>
+    <p class="lore-prose">El tercer nombramiento fue de silencio. No hubo palabras entre la Diosa y lo que se convirtió en <em>Xal-Zulthor</em>. La Diosa señaló el espacio entre los mundos, la grieta oscura donde nada debería vivir pero algo ya lo hacía, y Xal entendió. No preguntó qué debía hacer. No preguntó a qué costo. Solo caminó hacia la oscuridad y no volvió a mirar atrás.</p>
+  </div>
+
+  <div class="lore-section">
+    <div class="lore-section-title">La Amenaza</div>
+    <div class="lore-section-sub">Por Qué Fueron Necesarios</div>
+    <p class="lore-prose">Antes de los Guild Masters existían los <em>Dioses Primigenios</em> — entidades que la Diosa no creó sino que encontró ya presentes cuando el mundo tomó forma. No eran malignos por elección; eran malignos por naturaleza, como una tormenta lo es. Hambrientos de adoración, consumían a los mortales sin propósito — los formaban, los usaban, los desechaban.</p>
+    <p class="lore-prose">Los Primigenios comenzaron a corromperse entre sí, a absorber el maná del mundo sin devolverlo, a romper el tejido entre dimensiones. El End comenzó a desgarrarse. El Dragón, guardián neutral del equilibrio dimensional, empezó a caer bajo su influencia — no por derrota, sino por saturación.</p>
+    <p class="lore-prose">La Diosa necesitaba a alguien que comprendiera a los Primigenios lo suficiente como para construirles una jaula a medida. Alguien que mirara directamente lo que ella prefería no tocar. Por eso Xal ya existía cuando llegó ese momento. Ya estaba listo. Eso es lo que más inquieta a los otros dos Vigilantes: que su propósito fue diseñado antes de que la amenaza fuera visible.</p>
+  </div>
+
+  <div class="lore-section">
+    <div class="lore-section-title">El Encarcelamiento en el End</div>
+    <div class="lore-section-sub">Lo Que Cambió a Xal-Zulthor Para Siempre</div>
+    <p class="lore-prose">Xal descendió al End cuando aún era un lugar vivo. Para construir las cadenas correctas, tuvo que entender a los Primigenios — no estudiarlos desde afuera: <em>entenderlos</em>. Abrió su conciencia a cada uno y dejó que su naturaleza lo atravesara. Los Primigenios pensaron que lo estaban consumiendo. Se equivocaron. Xal los estaba catalogando.</p>
+    <p class="lore-prose">Cuando terminó, cada Primigenio estaba encadenado en una cámara del End construida exactamente para contenerlo — no con fuerza bruta sino con la comprensión precisa de qué los hacía posibles y qué los hacía imposibles de sostener fuera de esa jaula.</p>
+    <div class="highlight-quote">
+      <p>"Xal-Zulthor regresó del End sabiendo todas las palabras del idioma del horror. Eligió no hablarlas. Eso es lo más parecido a la santidad que he visto en ningún ser."</p>
+      <cite>— Aethel-Syren, Crónicas del Hilo</cite>
+    </div>
+    <p class="lore-prose">Khor lo notó la primera vez que habló con Xal después del encarcelamiento: sus ojos tenían la calma específica de quien ya no puede ser sorprendido por lo peor. Por eso los otros dos Vigilantes lo temen. No porque sea malvado. Sino porque saben lo que tuvo que mirar para volverse lo que es.</p>
+  </div>
+
+  <footer class="site-footer">
+    <span class="ornament" style="margin-bottom:1rem; display:block;">— ✦ —</span>
+    <p>Servidor DawnCraft · Canon Oficial del Servidor · Que la Diosa guíe tu camino</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
